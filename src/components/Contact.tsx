@@ -1,10 +1,8 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { salonImages, salonInfo } from '../data/images'
+import SalonImage from './SalonImage'
 import './Contact.css'
-
-const MAP_URL =
-  'https://www.google.com/maps/search/?api=1&query=SCO+14+Taj+Unisex+Salon+Sector+15+Panchkula+Haryana+134113'
 
 export default function Contact() {
   const ref = useRef(null)
@@ -32,15 +30,15 @@ export default function Contact() {
 
             <div className="contact-photo-row">
               <div className="contact-photo-main">
-                <img src={salonImages.contact.main} alt="Taj Salon styling stations" loading="lazy" />
+                <SalonImage src={salonImages.contact.main} alt="Taj Salon styling stations" />
               </div>
               <div className="contact-photo-accent">
-                <img src={salonImages.contact.accent} alt="Salon grooming area" loading="lazy" />
+                <SalonImage src={salonImages.contact.accent} alt="Salon grooming area" />
               </div>
             </div>
 
             <div className="contact-details">
-              <a href={MAP_URL} target="_blank" rel="noopener noreferrer" className="contact-item">
+              <a href={salonInfo.googleMaps} target="_blank" rel="noopener noreferrer" className="contact-item">
                 <span className="contact-icon">◉</span>
                 <div>
                   <span className="contact-label">Address</span>
@@ -73,7 +71,7 @@ export default function Contact() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <div className="contact-map-image">
-              <img src={salonImages.heroMain} alt="Taj Unisex Salon interior" loading="lazy" />
+              <SalonImage src={salonImages.heroMain} alt="Taj Unisex Salon interior" />
               <div className="contact-map-overlay">
                 <div className="map-pin">
                   <span className="pin-pulse" />
@@ -82,7 +80,7 @@ export default function Contact() {
                 <div className="map-info">
                   <p className="map-location">Sector 15, Panchkula</p>
                   <p className="map-address">Main Market Road, First Floor</p>
-                  <a href={MAP_URL} target="_blank" rel="noopener noreferrer" className="btn-outline map-btn">
+                  <a href={salonInfo.googleMaps} target="_blank" rel="noopener noreferrer" className="btn-outline map-btn">
                     Open in Google Maps
                   </a>
                 </div>

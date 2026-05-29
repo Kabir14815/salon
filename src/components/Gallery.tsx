@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { salonImages } from '../data/images'
+import SalonImage from './SalonImage'
 import './Gallery.css'
 
 export default function Gallery() {
@@ -13,7 +14,7 @@ export default function Gallery() {
       <div className="gallery-bg" />
       <div className="container">
         <motion.div
-          className="gallery-header"
+          className="gallery-header section-header"
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
@@ -40,7 +41,7 @@ export default function Gallery() {
               transition={{ duration: 0.5, delay: i * 0.07 }}
               onClick={() => setActive(i)}
             >
-              <img src={item.src} alt={item.alt} loading="lazy" />
+              <SalonImage src={item.src} alt={item.alt} />
               <div className="gallery-item-overlay">
                 <span className="gallery-label">{item.label}</span>
                 <span className="gallery-zoom">View</span>
@@ -74,9 +75,10 @@ export default function Gallery() {
               >
                 ×
               </button>
-              <img
-                src={salonImages.gallery[active].src.replace('w=900', 'w=1400')}
+              <SalonImage
+                src={salonImages.gallery[active].src}
                 alt={salonImages.gallery[active].alt}
+                loading="eager"
               />
               <p className="lightbox-caption">{salonImages.gallery[active].label}</p>
             </motion.div>

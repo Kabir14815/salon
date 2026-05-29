@@ -1,18 +1,19 @@
 .booking {
-  padding: 6rem 0;
+  padding-block: var(--section-pad-y);
   background: #fff;
 }
 
 .booking-grid {
   display: grid;
-  grid-template-columns: 1fr 1.15fr;
-  gap: 4rem;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: clamp(2.5rem, 5vw, 4rem);
   align-items: start;
 }
 
 .booking-info {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 
 .booking-intro {
@@ -21,19 +22,21 @@
   line-height: 1.85;
   color: var(--text-body);
   margin-bottom: 1.75rem;
-  max-width: 400px;
+  max-width: 440px;
 }
 
 .booking-visual {
   position: relative;
   margin-bottom: 1.75rem;
   width: 100%;
-  max-width: 380px;
+  max-width: 360px;
+  padding: 0 0 1rem 0;
 }
 
 .booking-photo-main {
   aspect-ratio: 4/5;
   overflow: hidden;
+  border-radius: 4px;
   border: 1px solid var(--glass-border);
 }
 
@@ -45,11 +48,12 @@
 
 .booking-photo-accent {
   position: absolute;
-  bottom: -16px;
-  right: -16px;
-  width: 130px;
-  height: 130px;
+  bottom: 0;
+  right: 0;
+  width: 120px;
+  height: 120px;
   overflow: hidden;
+  border-radius: 4px;
   border: 3px solid #fff;
   box-shadow: 0 10px 30px rgba(42, 33, 24, 0.12);
 }
@@ -72,6 +76,8 @@
   flex-direction: column;
   gap: 0.75rem;
   margin-bottom: 2rem;
+  width: 100%;
+  max-width: 400px;
 }
 
 .booking-perk {
@@ -93,10 +99,13 @@
 .booking-hours {
   padding: 1.25rem 1.5rem;
   background: var(--warm-cream);
+  border-radius: 4px;
   border: 1px solid var(--glass-border);
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
+  width: 100%;
+  max-width: 400px;
 }
 
 .booking-hours strong {
@@ -113,6 +122,7 @@
 
 .booking-form-wrap {
   background: var(--warm-cream);
+  border-radius: 4px;
   border: 1px solid var(--glass-border);
   padding: 2.25rem;
   box-shadow: 0 20px 60px rgba(42, 33, 24, 0.06);
@@ -153,7 +163,7 @@
   color: var(--text-dark);
   background: #fff;
   border: 1px solid rgba(61, 46, 36, 0.2);
-  border-radius: 0;
+  border-radius: 2px;
   transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -290,8 +300,14 @@
     gap: 2.5rem;
   }
 
+  .booking-info {
+    align-items: center;
+    text-align: center;
+  }
+
   .booking-intro,
-  .booking-visual {
+  .booking-perks,
+  .booking-hours {
     max-width: 100%;
   }
 
@@ -301,10 +317,6 @@
 }
 
 @media (max-width: 600px) {
-  .booking {
-    padding: 4.5rem 0;
-  }
-
   .booking-form-wrap {
     padding: 1.5rem;
   }

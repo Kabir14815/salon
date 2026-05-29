@@ -2,6 +2,7 @@ import { useState, useRef, type FormEvent } from 'react'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { serviceOptions } from '../data/services'
 import { salonImages, salonInfo } from '../data/images'
+import SalonImage from './SalonImage'
 import {
   saveBooking,
   buildWhatsAppLink,
@@ -98,10 +99,10 @@ export default function Booking() {
 
           <div className="booking-visual">
             <div className="booking-photo-main">
-              <img src={salonImages.booking.main} alt="Premium salon chair at Taj" loading="lazy" />
+              <SalonImage src={salonImages.booking.main} alt="Premium salon chair at Taj" />
             </div>
             <div className="booking-photo-accent">
-              <img src={salonImages.booking.accent} alt="Relaxing salon treatment" loading="lazy" />
+              <SalonImage src={salonImages.booking.accent} alt="Relaxing salon treatment" />
             </div>
           </div>
 

@@ -1,18 +1,19 @@
 .services {
   position: relative;
-  padding: 6rem 0;
+  padding-block: var(--section-pad-y);
   background: var(--warm-ivory);
 }
 
-.services-header {
-  text-align: center;
-  max-width: 620px;
-  margin-inline: auto;
-  margin-bottom: 3.5rem;
+.services-bg {
+  display: none;
 }
 
-.services-header .gold-line {
-  margin-inline: auto;
+.services-header {
+  margin-bottom: 0;
+}
+
+.services-intro {
+  margin-top: 1.25rem;
 }
 
 .services-showcase {
@@ -26,6 +27,7 @@
 .showcase-item {
   overflow: hidden;
   aspect-ratio: 16/10;
+  border-radius: 4px;
   border: 1px solid var(--glass-border);
 }
 
@@ -55,6 +57,7 @@
   overflow: hidden;
   padding: 0;
   background: #fff;
+  border-radius: 4px;
   border: 1px solid var(--glass-border);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
@@ -133,7 +136,7 @@
 
 @media (max-width: 900px) {
   .services-showcase {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     margin-bottom: 2.5rem;
   }
 
@@ -143,10 +146,6 @@
 }
 
 @media (max-width: 600px) {
-  .services {
-    padding: 4.5rem 0;
-  }
-
   .services-showcase {
     grid-template-columns: 1fr;
     gap: 0.65rem;

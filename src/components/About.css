@@ -1,26 +1,28 @@
 .about {
-  padding: 6rem 0;
+  padding-block: var(--section-pad-y);
   background: var(--warm-cream);
 }
 
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(2.5rem, 5vw, 4.5rem);
   align-items: center;
 }
 
 .about-visual {
   position: relative;
   width: 100%;
-  max-width: 420px;
+  max-width: 360px;
   margin-inline: auto;
+  padding: 1.25rem;
 }
 
 .about-frame {
   aspect-ratio: 4/5;
   width: 100%;
   overflow: hidden;
+  border-radius: 4px;
   border: 1px solid var(--glass-border);
 }
 
@@ -32,11 +34,12 @@
 
 .about-secondary-image {
   position: absolute;
-  bottom: -24px;
-  right: -16px;
-  width: 150px;
-  height: 150px;
+  bottom: 0;
+  right: 0;
+  width: 120px;
+  height: 120px;
   overflow: hidden;
+  border-radius: 4px;
   border: 3px solid var(--warm-ivory);
   box-shadow: 0 12px 40px rgba(42, 33, 24, 0.12);
 }
@@ -49,25 +52,38 @@
 
 .about-float-card {
   position: absolute;
-  top: 24px;
-  right: -8px;
-  padding: 1.1rem 1.5rem;
+  top: 0;
+  right: 0;
+  padding: 1rem 1.35rem;
   background: #fff;
+  border-radius: 4px;
   border: 1px solid var(--glass-border);
   box-shadow: 0 8px 30px rgba(42, 33, 24, 0.08);
 }
 
 .float-number {
   font-family: var(--font-display);
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   color: var(--warm-tan);
+  line-height: 1;
 }
 
 .float-text {
-  font-size: 0.65rem;
-  letter-spacing: 0.12em;
+  display: block;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 520px;
+  margin-inline: auto 0;
 }
 
 .about-text {
@@ -81,8 +97,9 @@
 .about-features {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.85rem;
+  gap: 0.85rem 1.25rem;
   margin-top: 1.75rem;
+  width: 100%;
 }
 
 .about-feature {
@@ -101,6 +118,18 @@
   flex-shrink: 0;
 }
 
+@media (min-width: 901px) {
+  .about-visual {
+    margin-inline: auto 0;
+    justify-self: end;
+  }
+
+  .about-content {
+    margin-inline: 0 auto;
+    justify-self: start;
+  }
+}
+
 @media (max-width: 900px) {
   .about-grid {
     grid-template-columns: 1fr;
@@ -108,24 +137,34 @@
   }
 
   .about-visual {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 1rem;
+    max-width: 340px;
+    padding: 1rem;
+  }
+
+  .about-content {
+    align-items: center;
+    text-align: center;
+    margin-inline: auto;
+  }
+
+  .about-content .gold-line {
+    margin-inline: auto;
+  }
+
+  .about-features {
+    max-width: 400px;
+    margin-inline: auto;
   }
 }
 
 @media (max-width: 600px) {
-  .about {
-    padding: 4.5rem 0;
-  }
-
   .about-features {
     grid-template-columns: 1fr;
+    max-width: 260px;
   }
 
   .about-secondary-image {
-    width: 110px;
-    height: 110px;
-    right: 4%;
+    width: 96px;
+    height: 96px;
   }
 }

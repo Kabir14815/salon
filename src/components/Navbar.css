@@ -17,8 +17,6 @@
 }
 
 .navbar-inner {
-  width: min(1180px, 92vw);
-  margin-inline: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -34,6 +32,17 @@
   color: #fff;
   z-index: 1001;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.navbar-logo-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.35);
 }
 
 .navbar-logo em {

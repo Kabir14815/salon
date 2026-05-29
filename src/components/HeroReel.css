@@ -1,0 +1,93 @@
+.hero-reel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 6px;
+  background: rgba(18, 12, 8, 0.4);
+}
+
+.hero-reel-slide {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-reel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.hero-reel-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 45%,
+    rgba(18, 12, 8, 0.55) 100%
+  );
+  pointer-events: none;
+}
+
+.hero-reel-caption {
+  position: absolute;
+  left: 1.25rem;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.hero-reel-tag {
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--warm-gold-light);
+}
+
+.hero-reel-label {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.hero-reel-progress {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  gap: 0.45rem;
+  padding: 0.35rem 0.65rem;
+  background: rgba(18, 12, 8, 0.45);
+  backdrop-filter: blur(8px);
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-reel-dot {
+  width: 6px;
+  height: 6px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.hero-reel-dot.active {
+  background: var(--warm-gold-light);
+  transform: scale(1.2);
+}
+
+.hero-reel-dot:hover {
+  background: rgba(255, 255, 255, 0.65);
+}

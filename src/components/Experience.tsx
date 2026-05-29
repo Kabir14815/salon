@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { salonImages } from '../data/images'
+import SalonImage from './SalonImage'
 import './Experience.css'
 
 const steps = [
@@ -38,7 +39,7 @@ export default function Experience() {
     <section id="experience" className="experience" ref={ref}>
       <div className="container">
         <motion.div
-          className="experience-header"
+          className="experience-header section-header"
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
@@ -56,7 +57,7 @@ export default function Experience() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          <img src={salonImages.experience.banner} alt="Salon experience at Taj" loading="lazy" />
+          <SalonImage src={salonImages.experience.banner} alt="Salon experience at Taj" />
           <div className="experience-banner-text">
             <span>Luxury grooming in every detail</span>
           </div>
@@ -72,7 +73,7 @@ export default function Experience() {
               transition={{ duration: 0.6, delay: i * 0.15 }}
             >
               <div className="step-image">
-                <img src={step.image} alt={step.title} loading="lazy" />
+                <SalonImage src={step.image} alt={step.title} />
                 <span className="step-num-badge">{step.num}</span>
               </div>
               <div className="step-content">

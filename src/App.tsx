@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import Lenis from 'lenis'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import TrustBar from './components/TrustBar'
 import Services from './components/Services'
 import Gallery from './components/Gallery'
 import About from './components/About'
@@ -32,9 +33,10 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
+        <TrustBar />
+        <About />
         <Services />
         <Gallery />
-        <About />
         <Experience />
         <Booking />
         <Contact />

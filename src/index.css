@@ -24,6 +24,11 @@
   --glow-gold: rgba(196, 165, 116, 0.3);
   --font-display: 'Cormorant Garamond', Georgia, serif;
   --font-body: 'Outfit', system-ui, sans-serif;
+  --container-max: 1180px;
+  --container-pad: 4vw;
+  --section-pad-y: clamp(4.5rem, 8vw, 6rem);
+  --section-header-max: 620px;
+  --nav-height: 5.5rem;
 
   /* legacy aliases */
   --bg-deep: var(--warm-dark);
@@ -192,17 +197,21 @@ img {
 }
 
 .container {
-  width: min(1180px, 92vw);
+  width: min(var(--container-max), calc(100% - 2 * var(--container-pad)));
   margin-inline: auto;
 }
 
+.section-block {
+  padding-block: var(--section-pad-y);
+}
+
 section {
-  scroll-margin-top: 5.5rem;
+  scroll-margin-top: var(--nav-height);
 }
 
 .section-header {
   text-align: center;
-  max-width: 620px;
+  max-width: var(--section-header-max);
   margin-inline: auto;
   margin-bottom: 3.5rem;
 }

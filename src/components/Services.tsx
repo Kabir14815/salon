@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { salonImages } from '../data/images'
+import SalonImage from './SalonImage'
 import './Services.css'
 
 const services = [
@@ -51,7 +52,7 @@ export default function Services() {
       <div className="services-bg" />
       <div className="container">
         <motion.div
-          className="services-header"
+          className="services-header section-header"
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
@@ -75,7 +76,7 @@ export default function Services() {
         >
           {salonImages.servicesBanner.map((src, i) => (
             <div key={src} className="showcase-item">
-              <img src={src} alt={`Salon service showcase ${i + 1}`} loading="lazy" />
+              <SalonImage src={src} alt={`Salon service showcase ${i + 1}`} />
             </div>
           ))}
         </motion.div>
@@ -91,7 +92,7 @@ export default function Services() {
               whileHover={{ y: -8, transition: { duration: 0.3 } }}
             >
               <div className="service-image-wrap">
-                <img src={service.image} alt={service.title} loading="lazy" />
+                <SalonImage src={service.image} alt={service.title} />
                 <span className="service-tag">{service.tag}</span>
               </div>
               <div className="service-card-inner">

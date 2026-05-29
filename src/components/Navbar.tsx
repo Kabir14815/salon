@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { salonImages } from '../data/images'
+import SalonImage from './SalonImage'
 import './Navbar.css'
 
 const links = [
@@ -52,9 +54,10 @@ export default function Navbar() {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
-      <div className="navbar-inner">
+      <div className="navbar-inner container">
         <a href="#home" className="navbar-logo">
-          Taj <em>Salon</em>
+          <SalonImage src={salonImages.logo} alt="Taj Salon" className="navbar-logo-img" loading="eager" />
+          <span>Taj <em>Salon</em></span>
         </a>
 
         <nav className="navbar-nav" aria-label="Main navigation">

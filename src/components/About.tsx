@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { salonImages } from '../data/images'
+import { salonImages, salonInfo } from '../data/images'
+import SalonImage from './SalonImage'
 import './About.css'
 
 export default function About() {
@@ -17,10 +18,10 @@ export default function About() {
           transition={{ duration: 0.8 }}
         >
           <div className="about-frame">
-            <img src={salonImages.about} alt="Taj Unisex Salon studio" />
+            <SalonImage src={salonImages.about} alt="Taj Unisex Salon studio" loading="eager" />
           </div>
           <div className="about-secondary-image">
-            <img src={salonImages.heroSecondary} alt="Hair styling session" loading="lazy" />
+            <SalonImage src={salonImages.aboutSecondary} alt="Bridal styling at Taj Salon" />
           </div>
           <div className="about-float-card">
             <span className="float-number">★ 4.9</span>
@@ -41,8 +42,8 @@ export default function About() {
           <div className="gold-line" />
           <p className="about-text">
             Nestled in the heart of Sector 15, Panchkula, Taj Unisex Beauty Salon has been
-            the destination of choice for those who demand nothing but the finest in grooming
-            and beauty care.
+            welcoming clients since {salonInfo.established} — a trusted destination for premium
+            grooming and beauty care.
           </p>
           <p className="about-text">
             Our team of skilled artisans combines international techniques with personalized
