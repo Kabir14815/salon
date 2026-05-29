@@ -1,0 +1,131 @@
+.about {
+  padding: 6rem 0;
+  background: var(--warm-cream);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-visual {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  margin-inline: auto;
+}
+
+.about-frame {
+  aspect-ratio: 4/5;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+}
+
+.about-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-secondary-image {
+  position: absolute;
+  bottom: -24px;
+  right: -16px;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  border: 3px solid var(--warm-ivory);
+  box-shadow: 0 12px 40px rgba(42, 33, 24, 0.12);
+}
+
+.about-secondary-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-float-card {
+  position: absolute;
+  top: 24px;
+  right: -8px;
+  padding: 1.1rem 1.5rem;
+  background: #fff;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 30px rgba(42, 33, 24, 0.08);
+}
+
+.float-number {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--warm-tan);
+}
+
+.float-text {
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.about-text {
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.about-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+  margin-top: 1.75rem;
+}
+
+.about-feature {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.82rem;
+  color: var(--text-body);
+}
+
+.feature-dot {
+  width: 5px;
+  height: 5px;
+  background: var(--warm-gold);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .about-visual {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .about {
+    padding: 4.5rem 0;
+  }
+
+  .about-features {
+    grid-template-columns: 1fr;
+  }
+
+  .about-secondary-image {
+    width: 110px;
+    height: 110px;
+    right: 4%;
+  }
+}

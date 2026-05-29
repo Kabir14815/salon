@@ -1,0 +1,228 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --warm-dark: #1a120c;
+  --warm-brown: #3d2e24;
+  --warm-tan: #a68b6a;
+  --warm-gold: #c4a574;
+  --warm-gold-light: #dbc49a;
+  --warm-cream: #f7f3ed;
+  --warm-ivory: #faf8f4;
+  --warm-sand: #ebe4d8;
+  --text-dark: #2a2118;
+  --text-body: #4a3f34;
+  --text-muted: #6b5d4f;
+  --text-light: #f5efe6;
+  --glass: rgba(255, 255, 255, 0.72);
+  --glass-border: rgba(196, 165, 116, 0.25);
+  --glow-gold: rgba(196, 165, 116, 0.3);
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Outfit', system-ui, sans-serif;
+
+  /* legacy aliases */
+  --bg-deep: var(--warm-dark);
+  --bg-surface: var(--warm-cream);
+  --bg-elevated: var(--warm-ivory);
+  --gold: var(--warm-gold);
+  --gold-light: var(--warm-gold-light);
+  --gold-dim: #8a7355;
+  --rose-gold: var(--warm-tan);
+  --champagne: var(--warm-gold-light);
+  --cream: var(--warm-ivory);
+  --text-primary: var(--text-dark);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--warm-cream);
+  color: var(--text-dark);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+::selection {
+  background: var(--warm-gold);
+  color: #fff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.section-label {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--warm-gold);
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 5vw, 3.75rem);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: 0.02em;
+  color: var(--text-dark);
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--warm-tan);
+}
+
+.gold-line {
+  width: 50px;
+  height: 1px;
+  background: var(--warm-gold);
+  margin: 1.25rem 0;
+}
+
+.glass-card {
+  background: var(--glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.9rem 2rem;
+  background: var(--warm-brown);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border: none;
+  transition: background 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.btn-primary:hover {
+  background: var(--warm-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(26, 18, 12, 0.2);
+}
+
+.btn-primary span {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.9rem 2rem;
+  background: transparent;
+  color: var(--warm-brown);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border: 1px solid var(--warm-tan);
+  transition: border-color 0.3s ease, color 0.3s ease, background 0.3s ease;
+}
+
+.btn-outline:hover {
+  border-color: var(--warm-brown);
+  color: var(--warm-dark);
+  background: rgba(166, 139, 106, 0.08);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2.25rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  background: transparent;
+  transition: background 0.35s ease, border-color 0.35s ease;
+}
+
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #fff;
+}
+
+.container {
+  width: min(1180px, 92vw);
+  margin-inline: auto;
+}
+
+section {
+  scroll-margin-top: 5.5rem;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 620px;
+  margin-inline: auto;
+  margin-bottom: 3.5rem;
+}
+
+.section-header .gold-line {
+  margin-inline: auto;
+}
+
+.section-header .section-intro,
+.services-intro,
+.gallery-intro,
+.booking-intro,
+.contact-intro {
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--text-muted);
+  margin-top: 1.25rem;
+}
+
+main {
+  overflow-x: hidden;
+}

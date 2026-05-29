@@ -1,0 +1,80 @@
+.hero-emblem {
+  width: clamp(160px, 28vw, 240px);
+  margin: 0 auto 1.75rem;
+  animation: emblem-float 6s ease-in-out infinite;
+  filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.5));
+}
+
+.emblem-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.emblem-ring {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.95);
+  stroke-width: 0.8;
+}
+
+.emblem-ring-outer {
+  stroke-width: 1.2;
+}
+
+.emblem-text {
+  fill: #ffffff;
+  font-family: var(--font-body);
+  font-size: 7.5px;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.emblem-ray {
+  stroke: rgba(255, 255, 255, 0.85);
+  stroke-width: 0.7;
+  stroke-linecap: round;
+}
+
+.emblem-core {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.8);
+  stroke-width: 0.6;
+}
+
+.emblem-core-inner {
+  fill: #ffffff;
+}
+
+.emblem-sunburst {
+  animation: emblem-spin 80s linear infinite;
+  transform-origin: 110px 110px;
+}
+
+@keyframes emblem-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes emblem-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-emblem {
+    width: clamp(140px, 42vw, 180px);
+    margin-bottom: 1.25rem;
+  }
+
+  .emblem-text {
+    font-size: 6.5px;
+    letter-spacing: 0.22em;
+  }
+}
